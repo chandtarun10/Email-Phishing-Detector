@@ -177,8 +177,6 @@ The login page where you enter:
 - Your Gmail address
 - Your **Gmail App Password** (NOT your regular Gmail password — see setup below)
 
-> ⚠️ **PRIVACY ISSUE:** Lines 51-52 show your phone number and email in the footer. Remove these before submitting or deploying!
-
 ---
 
 ### 🔷 `templates/dashboard.html` — The Control Panel
