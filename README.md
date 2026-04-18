@@ -256,17 +256,6 @@ pip install flask requests
    ```
    with your actual key.
 
-### Step 5: Fix the Privacy Issue
-
-Open `templates/login.html` and remove or update lines 51-52:
-```html
-<!-- REMOVE or UPDATE these lines: -->
-📞 +91 9027239296 <br>
-📧 chandtarun1234@gmail.com
-```
-
----
-
 ## ▶️ How to Run
 
 ```bash
