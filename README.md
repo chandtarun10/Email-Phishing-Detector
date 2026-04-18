@@ -40,26 +40,26 @@ Think of it like a **security guard** for your inbox 📬🔒
 You Log In → App Connects to Gmail → Fetches Emails → Scans Each Email
                                                               ↓
                               ┌───────────────────────────────────────┐
-                              │        Two-Layer Detection System      │
-                              │                                        │
-                              │  1️⃣ Keyword Check                    │
+                              │        Two-Layer Detection System     │
+                              │                                       │
+                              │  1️⃣ Keyword Check                     │
                               │     Looks for words like:             │
                               │     "lottery", "urgent", "winner",    │
                               │     "verify", "free money", etc.      │
-                              │                                        │
-                              │  2️⃣ URL Check (VirusTotal API)        │
+                              │                                       │
+                              │  2️⃣ URL Check (VirusTotal API)        |
                               │     If email has a link, checks it    │
                               │     against VirusTotal's database of  │
                               │     60+ antivirus engines             │
                               └───────────────────────────────────────┘
                                               ↓
-                    ┌─────────────────────────────────────────────┐
-                    │                                             │
-               ⚠️ PHISHING?                                  ✅ SAFE?
-                    │                                             │
-         Move to Quarantine folder                   Show as "Safe" on dashboard
-         Send alert email to you
-         Log it in the database
+                          ┌─────────────────────────────────────────────┐
+                          │                                             │
+                     ⚠️ PHISHING?                                  ✅ SAFE?
+                          │                                             │
+             Move to Quarantine folder                   Show as "Safe" on dashboard
+             Send alert email to you
+             Log it in the database
 ```
 
 ---
