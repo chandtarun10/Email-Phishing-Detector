@@ -298,9 +298,7 @@ http://localhost:5000
 - [ ] 🤖 Add machine learning model for smarter detection
 - [ ] 📊 Add charts and graphs to the dashboard
 - [ ] 🔑 Replace password auth with Google OAuth2 (safer)
-- [ ] 📨 Support for Outlook, Yahoo Mail, etc.
 - [ ] 🌐 Deploy to cloud (Heroku, AWS, etc.)
-- [ ] 📱 Make the UI mobile-friendly
 - [ ] 🕐 Add automatic scheduled scanning (every hour)
 - [ ] 📈 Add historical statistics and trends
 
@@ -322,5 +320,3 @@ This project was built for educational and security demonstration purposes.
 > 🛡️ *"Security is not a product, but a process."* — Bruce Schneier
 
 ---
-
-*Built with ❤️ using Python & Flask*
