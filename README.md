@@ -320,3 +320,11 @@ This project was built for educational and security demonstration purposes.
 > 🛡️ *"Security is not a product, but a process."* — Bruce Schneier
 
 ---
+
+
+<div align="center">
+
+⭐ **If you found this project useful, give it a star!** ⭐
+
+
+</div>
