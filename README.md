@@ -13,7 +13,6 @@
 - [Setup & Installation](#-setup--installation)
 - [How to Run](#-how-to-run)
 - [Using the App](#-using-the-app)
-- [Security Issues to Fix](#-security-issues-to-fix)
 - [Future Improvements](#-future-improvements)
 - [Author](#-author)
 
@@ -293,44 +292,6 @@ http://localhost:5000
 
 ### Step 4 — Logout
 - Click **Logout** when done to clear your session securely
-
----
-
-## 🔐 Security Issues to Fix
-
-Before submitting this project to Google's security officer, here are the issues that should be addressed:
-
-| # | Issue | File | Severity | Fix |
-|---|-------|------|----------|-----|
-| 1 | Phone number exposed publicly | `login.html:51` | 🔴 HIGH | Remove from HTML footer |
-| 2 | Email exposed publicly | `login.html:52` | 🔴 HIGH | Remove from HTML footer |
-| 3 | Hardcoded placeholder API key | `phishing_detection.py` | 🟡 MEDIUM | Use environment variable |
-| 4 | Weak Flask secret key | `app.py` | 🟡 MEDIUM | Use a strong random key |
-| 5 | Password stored in session | `app.py` | 🟡 MEDIUM | Use OAuth2 instead |
-| 6 | No login authentication | `app.py` | 🟡 MEDIUM | Any email/password works |
-| 7 | Debug mode enabled | `app.py` | 🟠 LOW-MED | Set `debug=False` in production |
-
-### Quick Security Fixes:
-
-**Fix the API key (use environment variable):**
-```python
-import os
-VT_API_KEY = os.environ.get("VT_API_KEY", "")
-```
-
-**Fix the Flask secret key:**
-```python
-import secrets
-app.secret_key = secrets.token_hex(32)
-```
-
-**Disable debug mode for production:**
-```python
-if __name__ == "__main__":
-    app.run(debug=False)  # Change True → False
-```
-
----
 
 ## 🔮 Future Improvements
 
