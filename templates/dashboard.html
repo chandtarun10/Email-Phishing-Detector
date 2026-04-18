@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Phishing Detection Dashboard</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- 🔐 Navbar -->
+<div class="navbar">
+    <h2>🛡️ Phishing Detection Dashboard</h2>
+    <a href="/logout" class="logout-btn">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </a>
+</div>
+
+<!-- 📊 Stats -->
+<div class="stats-container">
+    <div class="stat-card">
+        <h3>Total Emails</h3>
+        <p>{{ results|length }}</p>
+    </div>
+
+    <div class="stat-card phishing">
+        <h3>Phishing</h3>
+        <p>{{ results | selectattr("status", "equalto", "⚠️ Phishing") | list | length }}</p>
+    </div>
+
+    <div class="stat-card safe">
+        <h3>Safe</h3>
+        <p>{{ results | selectattr("status", "equalto", "✅ Safe") | list | length }}</p>
+    </div>
+</div>
+
+<!-- 🔍 Scan -->
+<div class="scan-container">
+    <button id="scanBtn" onclick="startScan()">
+        <i class="fa-solid fa-magnifying-glass"></i> Scan Emails
+    </button>
+</div>
+
+<!-- 📬 Table -->
+<div class="table-container">
+<table>
+    <thead>
+        <tr>
+            <th>From</th>
+            <th>View Mail</th>
+            <th>Delete Mail</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for r in results %}
+        <tr>
+            <td>{{ r.from }}</td>
+
+            <td>
+                <button 
+    data-body="{{ r.body | e }}"
+    data-from="{{ r.from }}"
+    data-status="{{ r.status }}"
+    onclick="viewMailFromBtn(this)">
+    👁 View
+</button>
+
+            </td>
+
+            <td>
+                <button onclick="deleteMail('{{ r.id }}')">
+                    🗑 Delete
+                </button>
+            </td>
+
+            <td class="{% if 'Phishing' in r.status %}danger{% else %}safe{% endif %}">
+                {{ r.status }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<!-- 📩 Modal -->
+<div id="mailModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+
+        <h3>📧 Email Details</h3>
+        <p><strong>From:</strong> <span id="modalFrom"></span></p>
+        <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+
+        <hr>
+        <pre id="modalBody"></pre>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
