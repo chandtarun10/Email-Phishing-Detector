@@ -3,19 +3,6 @@
 > **A smart, real-time phishing email detection system built with Python & Flask.**  
 > Automatically scans your Gmail inbox, flags suspicious emails, quarantines threats, and keeps you safe — all from a sleek web dashboard.
 
----
-
-## 🚨 Security Notice (Important!)
-
-> ⚠️ **Your phone number `+91 9027239296` is publicly exposed** in `templates/login.html` (line 51).  
-> ⚠️ **Your email `chandtarun1234@gmail.com` is also exposed** in the same file (line 52).  
-> 🔒 **Remove these from the footer before sharing or deploying this project publicly.**
-
-**No other person's credentials were found in the project.** ✅  
-The project belongs to **Tarun Chand** and only Tarun's contact details appear in the codebase.
-
----
-
 ## 📖 Table of Contents
 
 - [What Is This Project?](#-what-is-this-project)
