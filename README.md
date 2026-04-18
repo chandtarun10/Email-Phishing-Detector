@@ -55,9 +55,9 @@ You Log In → App Connects to Gmail → Fetches Emails → Scans Each Email
                                               ↓
                     ┌─────────────────────────────────────────────┐
                     │                                             │
-               ⚠️ PHISHING?                              ✅ SAFE?
+               ⚠️ PHISHING?                                  ✅ SAFE?
                     │                                             │
-         Move to Quarantine folder               Show as "Safe" on dashboard
+         Move to Quarantine folder                   Show as "Safe" on dashboard
          Send alert email to you
          Log it in the database
 ```
